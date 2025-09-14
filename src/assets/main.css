@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+@import 'tailwindcss';
+@import 'flowbite/src/themes/default';
+
+/* Define custom theme colors */
+@theme {
+  /* Base colors */
+  --color-primary: #4f46e5;
+  --color-success: #10b981;
+  --color-info: #3b82f6;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+
+  /* Optional hover variants */
+  --color-primary-hover: #4338ca;
+  --color-success-hover: #0f9b75;
+  --color-info-hover: #2563eb;
+  --color-warning-hover: #d97706;
+  --color-error-hover: #dc2626;
+}
+
+:root {
+  font-family: 'Montserrat', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2d3748;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #718096;
+}
+
+/* @plugin "flowbite/plugin";
+@source "../node_modules/flowbite"; */
