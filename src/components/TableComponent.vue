@@ -29,7 +29,7 @@
         <input
           v-model="search"
           @input="debounceEmit"
-          placeholder="Search"
+          placeholder="SEARCH"
           class="block w-full h-full px-4 py-2 pr-8 pl-8 text-gray-700 bg-white border border-gray-400 focus:outline-none"
         />
       </div>
@@ -74,26 +74,26 @@
               </td>
               <td class="px-5 py-5 text-sm bg-white border-b border-gray-200">
                 <div class="flex items-center justify-center gap-2">
-                  <ButtonComponent
-                    class="w-auto px-3 py-1 text-sm text-center text-white bg-primary focus:outline-none hover:bg-indigo-500"
+                  <!-- <ButtonComponent
+                    class="w-auto px-3 py-1 text-sm text-center text-white bg-info focus:outline-none hover:bg-info-hover"
                     label="view"
                     type="button"
                     :loading="loading"
-                    @click="$emit('view', row)"
-                  />
+                    @click="$emit('rowView', row.id)"
+                  /> -->
                   <ButtonComponent
                     class="w-auto px-3 py-1 text-sm text-center text-white bg-warning focus:outline-none hover:bg-warning-hover"
                     label="update"
                     type="button"
                     :loading="loading"
-                    @click="$emit('update', row)"
+                    @click="$emit('rowUpdate', row.id)"
                   />
                   <ButtonComponent
                     class="w-auto px-3 py-1 text-sm text-center text-white bg-error focus:outline-none hover:bg-error-hover"
                     label="delete"
                     type="button"
                     :loading="loading"
-                    @click="$emit('delete', row)"
+                    @click="$emit('rowDelete', row.id)"
                   />
                 </div>
               </td>
@@ -111,14 +111,14 @@
             <button
               @click="prevPage"
               :disabled="page === 1"
-              class="px-4 py-2 text-sm font-semibold text-gray-800 bg-gray-300 hover:bg-gray-400 disabled:opacity-50"
+              class="px-4 py-2 text-[12px] font-semibold text-gray-800 bg-gray-300 hover:bg-gray-400 disabled:opacity-50"
             >
               Prev
             </button>
             <button
               @click="nextPage"
               :disabled="page * localPageSize >= total"
-              class="px-4 py-2 text-sm font-semibold text-gray-800 bg-gray-300 hover:bg-gray-400 disabled:opacity-50"
+              class="px-4 py-2 text-[12px] font-semibold text-gray-800 bg-gray-300 hover:bg-gray-400 disabled:opacity-50"
             >
               Next
             </button>
@@ -151,7 +151,7 @@ interface Props {
 }
 
 const props = defineProps<Props>()
-const emit = defineEmits(['update:params', 'view', 'update', 'delete'])
+const emit = defineEmits(['update:params', 'rowView', 'rowUpdate', 'rowDelete'])
 
 const search = ref('')
 const localPageSize = ref(props.pageSize)

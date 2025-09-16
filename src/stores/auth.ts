@@ -16,7 +16,7 @@ export const useAuthStore = defineStore('auth', () => {
     email: '',
     password: '',
     password_confirmation: '',
-    phone: null,
+    phone: '',
     name: '',
     address: '',
     subdomain: '',
@@ -45,7 +45,7 @@ export const useAuthStore = defineStore('auth', () => {
       router.push('/')
       return data.data
     } catch (err: any) {
-      errors.value = err.response?.data?.errors || 'Failed to Register.'
+      errors.value = err.response?.data?.errors
       throw err
     } finally {
       loading.value = false
@@ -57,12 +57,13 @@ export const useAuthStore = defineStore('auth', () => {
       loading.value = true
       errors.value = {}
       const { data } = await api.post('/login', loginForm)
+      console.log('TEST', data)
+      console.log('DATA', data)
       setToken(data.data.token)
       user.value = data.data.user
       router.push('/dashboard')
     } catch (err: any) {
-      errors.value = err.response?.data?.errors || 'Failed to Login.'
-
+      errors.value = err.response?.data?.errors || 'login error'
       throw err
     } finally {
       loading.value = false

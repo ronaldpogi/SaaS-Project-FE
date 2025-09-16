@@ -26,7 +26,6 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => {
     const toast = useToastStore()
-
     // Example: show success toast for specific responses
     // Adjust the condition based on your API structure
     if (response.config.method !== 'get') {
@@ -37,19 +36,11 @@ api.interceptors.response.use(
         response.data.message || 'Operation completed successfully.',
       )
     }
-
     return response
   },
   (error) => {
-    const auth = useAuthStore()
     const toast = useToastStore()
-    if (error.response?.status === 401) {
-      auth.logout()
-      window.location.href = '/'
-      toast.addAlert('error', 'Unauthorized', 'Please login again.')
-    } else {
-      toast.addAlert('error', 'Error', error.response?.data?.message || 'Something went wrong')
-    }
+    toast.addAlert('error', 'Error', error.response?.data?.message || 'Something went wrong')
     return Promise.reject(error)
   },
 )

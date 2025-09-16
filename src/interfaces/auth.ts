@@ -7,7 +7,7 @@ export interface RegisterFormInterface {
   email: string
   password: string
   password_confirmation: string
-  phone: number | null
+  phone: string | number
   name: string
   address: string
   subdomain: string

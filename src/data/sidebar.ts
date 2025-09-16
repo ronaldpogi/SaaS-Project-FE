@@ -8,13 +8,13 @@ interface sidebarInterface {
 const sidebarData: sidebarInterface[] = [
   {
     id: 1,
-    name: 'Dashboard',
+    name: 'DASHBOARD',
     icon: 'clarity:dashboard-solid',
     to: '/dashboard',
   },
   {
     id: 1,
-    name: 'Users / Employees',
+    name: 'USERS',
     icon: 'clarity:users-solid',
     to: '/user',
   },

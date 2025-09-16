@@ -15,13 +15,13 @@
 
       <div class="relative mx-4 lg:mx-0">
         <span class="absolute inset-y-0 left-0 flex pl-3">
-          <Icon class="text-gray-600" icon="clarity:search-line" width="20" height="20" />
+          <Icon class="text-gray-400" icon="clarity:search-line" width="20" height="20" />
         </span>
 
         <input
-          class="w-32 pl-10 pr-4 text-gray-600 sm:w-64 border-0 border-b-2 focus:outline-none focus:ring-0 focus:border-primary pb-1"
+          class="w-32 pl-10 pr-4 text-gray-400 sm:w-64 border-b focus:outline-none focus:ring-0 focus:border-primary-hover pb-1"
           type="text"
-          placeholder="Search"
+          placeholder="SEARCH"
         />
       </div>
     </div>
@@ -64,18 +64,18 @@
             <a
               href="#"
               class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white"
-              >Profile</a
+              >PROFILE</a
             >
             <a
               href="#"
               class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white"
-              >Products</a
+              >PRODUCTS</a
             >
             <a
               @click="authStore.logout"
               type="button"
               class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white"
-              >Log out</a
+              >LOG OUT</a
             >
           </div>
         </transition>
