@@ -57,10 +57,10 @@
           </thead>
           <tbody>
             <tr v-if="loading">
-              <td :colspan="columns.length + 1" class="text-center py-5">Loading...</td>
+              <td :colspan="columns.length + 1" class="px-5 py-5 text-sm bg-white border-b border-gray-200 text-center">Loading...</td>
             </tr>
             <tr v-else-if="rows.length === 0">
-              <td :colspan="columns.length + 1" class="text-center py-5">No data found</td>
+              <td :colspan="columns.length + 1" class="px-5 py-5 text-sm bg-white border-b border-gray-200 text-center">No data found</td>
             </tr>
             <tr v-else v-for="(row, index) in rows" :key="index">
               <td
@@ -82,15 +82,15 @@
                     @click="$emit('rowView', row.id)"
                   /> -->
                   <ButtonComponent
-                    class="w-auto px-3 py-1 text-sm text-center text-white bg-warning focus:outline-none hover:bg-warning-hover"
-                    label="update"
+                    class="w-auto px-3 py-1 text-[12px] font-semibold text-center text-white bg-warning focus:outline-none hover:bg-warning-hover"
+                    label="UPDATE"
                     type="button"
                     :loading="loading"
                     @click="$emit('rowUpdate', row.id)"
                   />
                   <ButtonComponent
-                    class="w-auto px-3 py-1 text-sm text-center text-white bg-error focus:outline-none hover:bg-error-hover"
-                    label="delete"
+                    class="w-auto px-3 py-1 text-[12px] font-semibold text-center text-white bg-error focus:outline-none hover:bg-error-hover"
+                    label="DELETE"
                     type="button"
                     :loading="loading"
                     @click="$emit('rowDelete', row.id)"

@@ -18,9 +18,10 @@ import TabsComponent from '@/components/TabsComponent.vue'
 import UserTable from './UserTable.vue'
 import UserCreate from './UserCreate.vue'
 import UserUpdate from './UserUpdate.vue'
-import UserDelete from './userDelete.vue'
+import UserDelete from './UserDelete.vue'
 import { ref } from 'vue'
 import { useUserStore } from '@/stores/user'
+
 
 const userStore = useUserStore()
 

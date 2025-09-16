@@ -2,12 +2,13 @@
   <div>
     <ConfirmComponent
       v-model="isOpen"
-      title="Deactivate account"
-      message="Are you sure you want to deactivate your account? This action cannot be undone."
+      title="DELETE THIS ACCOUNT ?"
+      message="ARE YOU SURE YOU WANT TO DELETE THIS ACCOUNT ? THIS ACTION CANNOT BE UNDONE."
       icon="clarity:warning-line"
-      confirm-text="Deactivate"
-      cancel-text="Cancel"
-      @confirm="handleDeactivate"
+      confirm-text="DELETE"
+      cancel-text="CANCEL"
+      @confirm="handleDelete"
+      :loading="userStore.loading"
     />
   </div>
 </template>
@@ -15,6 +16,7 @@
 <script lang="ts" setup>
 import ConfirmComponent from '@/components/ConfirmComponent.vue'
 import { computed } from 'vue'
+import { useUserStore } from '@/stores/user'
 
 const props = defineProps({
   modelValue: {
@@ -23,9 +25,11 @@ const props = defineProps({
   },
   userId: {
     type: Number,
-    requireed: true,
+    required: true,
   },
 })
+
+const userStore = useUserStore()
 
 const emit = defineEmits(['update:modelValue'])
 
@@ -34,8 +38,8 @@ const isOpen = computed({
   set: (value: boolean) => emit('update:modelValue', value),
 })
 
-const handleDeactivate = () => {
-  alert('Account deactivated!')
+const handleDelete = () => {
+  userStore.destroy(props.userId)
   isOpen.value = false
 }
 </script>

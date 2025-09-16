@@ -3,7 +3,7 @@
     :class="`modal ${!isOpen && 'opacity-0 pointer-events-none'} z-50 fixed w-full h-full top-0 left-0 flex items-center justify-center`"
   >
     <!-- Overlay -->
-    <div @click="close" class="absolute w-full h-full bg-gray-900 opacity-50 modal-overlay"></div>
+    <div @click="close" class="fixed inset-0 bg-gray-900/90 transition-opacity"></div>
 
     <div
       class="z-50 w-11/12 mx-auto overflow-y-auto bg-white shadow-lg modal-container md:max-w-md"
@@ -12,7 +12,7 @@
       <div class="px-6 py-4 text-left modal-content">
         <div class="flex items-center justify-between pb-3">
           <p class="text-2xl">{{ heading }}</p>
-          <div class="z-50 cursor-pointer modal-close" @click="close">
+          <div class="cursor-pointer modal-close" @click="close">
             <Icon class="text-back fill-current" icon="clarity:close-line" width="25" height="25" />
           </div>
         </div>
@@ -65,7 +65,7 @@ const close = () => {
 }
 </script>
 
-<style>
+<style scoped>
 .modal {
   transition: opacity 0.25s ease;
 }
