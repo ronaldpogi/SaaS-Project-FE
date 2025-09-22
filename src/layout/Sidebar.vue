@@ -42,13 +42,13 @@
         <router-link
           v-for="x in sidebarData"
           :key="x.id"
-          class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
+          class="flex items-center px-6 py-2 mt-1 duration-200 border-l-4"
           :class="[$route.name === x.name ? activeClass : inactiveClass]"
           :to="x.to"
         >
-          <Icon class="text-gray-400" :icon="x.icon" width="25" height="25" />
+          <Icon class="text-gray-400" :icon="x.icon" width="20" height="20" />
 
-          <span class="mx-4">{{ x.name }}</span>
+          <span class="mx-4 text-[13px]">{{ x.label }}</span>
         </router-link>
       </nav>
     </div>

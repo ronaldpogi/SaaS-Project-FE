@@ -1,5 +1,6 @@
 interface sidebarInterface {
   id: number
+  label: string
   name: string
   icon: string
   to: string
@@ -8,13 +9,15 @@ interface sidebarInterface {
 const sidebarData: sidebarInterface[] = [
   {
     id: 1,
-    name: 'DASHBOARD',
+    label: 'DASHBOARD',
+    name: 'Dashboard',
     icon: 'clarity:dashboard-solid',
     to: '/dashboard',
   },
   {
     id: 1,
-    name: 'USERS',
+    label: 'USERS',
+    name: 'Users',
     icon: 'clarity:users-solid',
     to: '/user',
   },

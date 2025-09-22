@@ -2,10 +2,10 @@ import axios from 'axios'
 import { useAuthStore } from '@/stores/auth'
 import { useToastStore } from '@/stores/toast'
 
-const subdomain = window.location.hostname.split('.')[0]
+const subdomain = window.location.hostname.split('.')[0] + '.'
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || `http://${subdomain}.localhost/api`,
+  baseURL: import.meta.env.VITE_API_URL || `http://${subdomain}localhost/api`,
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json',

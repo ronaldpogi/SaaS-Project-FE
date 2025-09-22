@@ -18,9 +18,9 @@ const props = defineProps({
   userId: { type: Number, required: true },
 })
 
-const handleUpdate = () => {
-  userStore.update(props.userId)
-  isOpen.value = false
+const handleUpdate = async () => {
+  const success = await userStore.update(props.userId)
+  isOpen.value = !success
 }
 
 // define emits

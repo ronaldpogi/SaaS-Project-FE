@@ -11,7 +11,7 @@
         <select
           v-model="localPageSize"
           @change="emitChange"
-          class="block w-full h-full px-4 py-2 pr-8 text-gray-700 bg-white border border-gray-400 focus:outline-none"
+          class="block text-[13px] w-full h-full px-4 py-2 pr-8 text-gray-700 bg-white border border-gray-400 focus:outline-none"
         >
           <option v-for="s in [5, 10, 20]" :key="s" :value="s">{{ s }}</option>
         </select>
@@ -30,7 +30,7 @@
           v-model="search"
           @input="debounceEmit"
           placeholder="SEARCH"
-          class="block w-full h-full px-4 py-2 pr-8 pl-8 text-gray-700 bg-white border border-gray-400 focus:outline-none"
+          class="text-[13px] block w-full h-full px-4 py-2 pr-8 pl-8 text-gray-700 bg-white border border-gray-400 focus:outline-none"
         />
       </div>
     </div>
@@ -44,12 +44,12 @@
               <th
                 v-for="col in columns"
                 :key="col.key"
-                class="px-5 py-3 text-xs font-semibold tracking-wider text-center text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200"
+                class="px-5 py-3 text-xs font-semibold tracking-wider text-center text-gray-600 uppercase bg-gray-200 border-b-2 border-gray-300"
               >
                 {{ col.label }}
               </th>
               <th
-                class="px-5 py-3 text-xs font-semibold tracking-wider text-center text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200"
+                class="px-5 py-3 text-xs font-semibold tracking-wider text-center text-gray-600 uppercase bg-gray-200 border-b-2 border-gray-300"
               >
                 Actions
               </th>
@@ -57,10 +57,20 @@
           </thead>
           <tbody>
             <tr v-if="loading">
-              <td :colspan="columns.length + 1" class="px-5 py-5 text-sm bg-white border-b border-gray-200 text-center">Loading...</td>
+              <td
+                :colspan="columns.length + 1"
+                class="px-5 py-5 text-sm bg-white border-b border-gray-200 text-center"
+              >
+                Loading...
+              </td>
             </tr>
             <tr v-else-if="rows.length === 0">
-              <td :colspan="columns.length + 1" class="px-5 py-5 text-sm bg-white border-b border-gray-200 text-center">No data found</td>
+              <td
+                :colspan="columns.length + 1"
+                class="px-5 py-5 text-sm bg-white border-b border-gray-200 text-center"
+              >
+                No data found
+              </td>
             </tr>
             <tr v-else v-for="(row, index) in rows" :key="index">
               <td

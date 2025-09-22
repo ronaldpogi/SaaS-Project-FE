@@ -26,7 +26,7 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/user',
-    name: 'Users / Employees',
+    name: 'Users',
     component: UserView,
     meta: { requiresAuth: true },
   },

@@ -68,6 +68,7 @@ export const useUserStore = defineStore('user', () => {
       userForm.email = user.value?.email ?? ''
       userForm.phone = user.value?.phone ?? ''
       userForm.address = user.value?.address ?? ''
+      return true
     } catch (err: any) {
       throw err
     } finally {
@@ -97,10 +98,10 @@ export const useUserStore = defineStore('user', () => {
       const { data } = await api.put(`/users/${id}`, userForm)
       const index = users.value.findIndex((e) => e.id === id)
       if (index !== -1) users.value[index] = data.data
-      return data
+      return true
     } catch (err: any) {
       errors.value = err.response?.data?.errors || 'user update error'
-      throw err
+      return false
     } finally {
       loading.value = false
     }

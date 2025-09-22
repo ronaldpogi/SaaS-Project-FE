@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center text-[14px] text-gray-400 border-b border-gray-300">
+  <div class="text-center text-[13px] text-gray-400 border-b ">
     <ul class="flex flex-wrap -mb-px">
       <li v-for="x in userStore.tabs" :key="x.key">
         <button
@@ -8,7 +8,7 @@
             'inline-block w-20 py-1 border-b-2',
             modelValue === x.key
               ? 'text-primary border-primary'
-              : 'border-transparent hover:text-gray-300 hover:border-gray-300 cursor-pointer',
+              : 'border-transparent hover:text-gray-500  cursor-pointer',
           ]"
         >
           {{ x.label }}

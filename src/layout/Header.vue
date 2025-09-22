@@ -19,7 +19,7 @@
         </span>
 
         <input
-          class="w-32 pl-10 pr-4 text-gray-400 sm:w-64 border-b focus:outline-none focus:ring-0 focus:border-primary-hover pb-1"
+          class="text-[13px] w-32 pl-10 pr-4 text-gray-800 sm:w-64 border-b focus:outline-none focus:ring-0 focus:border-primary-hover pb-1"
           type="text"
           placeholder="SEARCH"
         />
